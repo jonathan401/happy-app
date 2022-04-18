@@ -93,7 +93,7 @@ const Jokes = () => {
             </div>
           </Card>
         ))}
-          <div style={{padding: "2rem 0"}}>
+          <div style={{padding: "0.8rem 0"}}>
               <Button 
                   onClick={getJokes} 
                   style={{borderRadius: "0.6rem", display: "block", margin: "auto" }} type="primary">

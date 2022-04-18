@@ -11,7 +11,7 @@ const colorConfig = {
   Misc: 'blue',
   Dark: 'dark',
   Spooky: 'cyan',
-  Christmas: 'volcano'
+  Christmas: 'magenta'
 };
 
 const Jokes = () => {

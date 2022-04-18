@@ -93,9 +93,13 @@ const Jokes = () => {
             </div>
           </Card>
         ))}
-          <Button 
-              onClick={getJokes} 
-              style={{borderRadius: "0.6rem", display: "block", margin: "auto", paddingBottom: "2rem" }} type="primary">More</Button>
+          <div style={{padding: "2rem 0"}}>
+              <Button 
+                  onClick={getJokes} 
+                  style={{borderRadius: "0.6rem", display: "block", margin: "auto" }} type="primary">
+                  More
+              </Button>
+          </div>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Typography, Tag, Button } from 'antd';
+import { Card, Typography, Tag } from 'antd';
 import { cardStyles } from './Category';
 import Spinner from './Spinner';
-import Error from './Error';
 
 const colorConfig = {
   Programming: 'purple',
@@ -16,8 +15,8 @@ const colorConfig = {
 
 const Jokes = () => {
   const [jokes, setJokes] = useState([]);
-  const [err, setErr] = useState('');
   const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
   const { Title } = Typography;
   const { category, type } = useParams();
@@ -39,6 +38,11 @@ const Jokes = () => {
 
   const capitalize = type ? type.charAt(0).toUpperCase() + type.slice(1) : '';
 
+  const refresh = () => {
+    window.scrollTo(0, 0);
+    getJokes();
+  };
+
   let header = type ? capitalize : category;
   if (loading) {
     return <Spinner />;
@@ -53,7 +57,7 @@ const Jokes = () => {
           style={{
             marginTop: '2rem',
             marginLeft: '1.3rem',
-            fontSize: '1.3rem',
+            fontSize: '1.5rem',
             color: 'white',
             cursor: 'pointer'
           }}></i>
@@ -77,7 +81,7 @@ const Jokes = () => {
                 <p>{joke.delivery}</p>
               </Fragment>
             ) : (
-              <p style={{ marginBottom: '0' }}>{joke.joke}</p>
+              <p>{joke.joke}</p>
             )}
             <div style={{ marginTop: '0.6rem' }}>
               {joke.safe ? (
@@ -93,16 +97,25 @@ const Jokes = () => {
             </div>
           </Card>
         ))}
-          <div style={{padding: "0.8rem 0"}}>
-              <Button 
-                  onClick={getJokes} 
-                  style={{borderRadius: "0.6rem", display: "block", margin: "auto" }} type="primary">
-                  More
-              </Button>
-          </div>
+        <div onClick={refresh} style={{ padding: '0.8rem 0' }}>
+          <i
+            className="fa fa-refresh"
+            aria-hidden="true"
+            style={refreshBtnStyle}></i>
+        </div>
       </div>
     </div>
   );
+};
+
+const refreshBtnStyle = {
+  color: 'cyan',
+  position: 'fixed',
+  right: '2rem',
+  opacity: '0.6',
+  bottom: '4rem',
+  cursor: 'pointer',
+  fontSize: '2rem'
 };
 
 export default Jokes;

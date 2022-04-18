@@ -15,8 +15,10 @@ const Category = ({ categories, types }) => {
         </Title>
       </div>
       <div className="container">
-        <div className="categories text-center my-2">
-          <Title level={3}>Category</Title>
+        <div className="categories text-center">
+          <Title level={3} style={headerStyle}>
+            Category
+          </Title>
         </div>
         <div style={cardStyles}>
           {categories.map((category, index) => {
@@ -31,9 +33,11 @@ const Category = ({ categories, types }) => {
             );
           })}
         </div>
-        <div style={{ padding: ' 1rem 0' }}>
-          <div className="types text-center my-2">
-            <Title level={3}>Joke Type</Title>
+        <div>
+          <div className="types text-center">
+            <Title level={3} style={headerStyle}>
+              Joke Type
+            </Title>
           </div>
           <div style={cardStyles}>
             {types.map((type, index) => {
@@ -56,10 +60,15 @@ const Category = ({ categories, types }) => {
 
 const cardStyles = {
   display: 'grid',
+  padding: '2rem 0',
   gridTemplateColumns: 'repeat(auto-fit, minmax(18rem, 1fr))',
   gridGap: '0.7rem',
   justifyContent: 'center',
   alignItems: 'center'
+};
+
+const headerStyle = {
+  margin: '0'
 };
 
 export { cardStyles, Category as default };

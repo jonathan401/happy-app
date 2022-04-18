@@ -39,7 +39,10 @@ const Jokes = () => {
   const capitalize = type ? type.charAt(0).toUpperCase() + type.slice(1) : '';
 
   const refresh = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0
+    });
     getJokes();
   };
 

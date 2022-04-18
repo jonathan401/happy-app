@@ -95,7 +95,7 @@ const Jokes = () => {
         ))}
           <Button 
               onClick={getJokes} 
-              style={{borderRadius: "0.6rem", display: "block", margin: "auto", paddingBottom: "1rem" }} type="primay">More</Button>
+              style={{borderRadius: "0.6rem", display: "block", margin: "auto", paddingBottom: "2rem" }} type="primary">More</Button>
       </div>
     </div>
   );

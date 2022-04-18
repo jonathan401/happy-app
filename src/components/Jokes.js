@@ -93,7 +93,9 @@ const Jokes = () => {
             </div>
           </Card>
         ))}
-          <Button onClick={getJokes} style={{borderRadius: "0.6rem"}} type="primay">More</Button>
+          <Button 
+              onClick={getJokes} 
+              style={{borderRadius: "0.6rem", display: "block", margin: "auto", paddingBottom: "1rem" }} type="primay">More</Button>
       </div>
     </div>
   );

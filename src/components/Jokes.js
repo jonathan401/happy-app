@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Typography, Tag } from 'antd';
+import { Card, Typography, Tag, Button } from 'antd';
 import { cardStyles } from './Category';
 import Spinner from './Spinner';
 import Error from './Error';
@@ -93,6 +93,7 @@ const Jokes = () => {
             </div>
           </Card>
         ))}
+          <Button onClick={getJokes} style={{borderRadius: "0.6rem"}} type="primay">More</Button>
       </div>
     </div>
   );

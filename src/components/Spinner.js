@@ -3,13 +3,13 @@ import { Spin } from 'antd';
 
 const Spinner = () => {
   return (
-    <div className="container" style={spinnerStyle}>
+    <div className="container" style={spinnerContainerStyle}>
       <Spin size="large" />
     </div>
   );
 };
 
-const spinnerStyle = {
+const spinnerContainerStyle = {
   width: '100%',
   height: '100vh',
   display: 'flex',

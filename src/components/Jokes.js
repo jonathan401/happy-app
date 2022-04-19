@@ -45,7 +45,7 @@ const Jokes = () => {
       left: 0
     });
     getJokes();
-    setLoading(false);
+    //setLoading(false);
   };
 
   let header = type ? capitalize : category;

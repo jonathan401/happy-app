@@ -39,11 +39,13 @@ const Jokes = () => {
   const capitalize = type ? type.charAt(0).toUpperCase() + type.slice(1) : '';
 
   const refresh = () => {
+    setLoading(true);
     window.scrollTo({
       top: 0,
       left: 0
     });
     getJokes();
+    setLoading(false);
   };
 
   let header = type ? capitalize : category;

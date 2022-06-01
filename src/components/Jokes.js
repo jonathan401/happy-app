@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, Typography, Tag } from 'antd';
-import { cardStyles } from './Category';
 import Spinner from './Spinner';
 
 const colorConfig = {
@@ -69,7 +68,7 @@ const Jokes = () => {
       <div className="my-2 text-center">
         <Title level={3}>{`${header} Jokes`}</Title>
       </div>
-      <div style={cardStyles}>
+      <div style={cardsStyles}>
         {jokes.map((joke, index) => (
           <Card key={index} style={{ color: 'grey' }}>
             {
@@ -120,6 +119,15 @@ const refreshBtnStyle = {
   bottom: '4rem',
   cursor: 'pointer',
   fontSize: '2rem'
+};
+
+const cardsStyles = {
+  display: 'grid',
+  padding: '2rem 0',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(19rem, 1fr))',
+  gridGap: '1rem',
+  justifyContent: 'center',
+  alignContent: 'center'
 };
 
 export default Jokes;
